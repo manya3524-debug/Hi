@@ -1,0 +1,165 @@
+:root{--ink:#27222d;--paper:#fff9ef;--rose:#b64f71;--night:#100e17}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:"DM Sans",sans-serif;background:#f5eee7;color:var(--ink);overflow-x:hidden}
+button,input{font:inherit}button{cursor:pointer}.noise{position:fixed;inset:0;pointer-events:none;opacity:.16;z-index:90;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.4'/%3E%3C/svg%3E");mix-blend-mode:multiply}
+.page{display:none;min-height:100vh;padding:32px 18px 78px;position:relative;background:radial-gradient(circle at 10% 14%,rgba(243,185,200,.34),transparent 22%),radial-gradient(circle at 91% 16%,rgba(207,196,239,.36),transparent 22%),linear-gradient(135deg,#f8efe7,#f1ebf5)}
+.page.active{display:flex;animation:in .55s ease both}@keyframes in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.paper{background:var(--paper);border:1px solid rgba(39,34,45,.09);box-shadow:0 22px 55px rgba(49,36,52,.17);position:relative}
+.tape{position:absolute;width:88px;height:25px;top:-12px;left:50%;transform:translateX(-50%) rotate(-3deg);background:rgba(241,213,161,.7);box-shadow:0 3px 7px rgba(0,0,0,.08)}
+.tape-right{left:auto;right:-24px;top:22px;transform:rotate(42deg)}.small-tape{left:24px;transform:rotate(-7deg)}
+h1,h2{font-family:"Playfair Display",serif;line-height:1.03;margin:0 0 16px}h1{font-size:clamp(3rem,10vw,6rem)}h2{font-size:clamp(2.5rem,8vw,5rem)}h3{margin:0;font-size:1.05rem}
+p{line-height:1.65}.label{text-transform:uppercase;letter-spacing:.17em;font-size:.72rem;font-weight:700;color:var(--rose);margin:0 0 10px}.hand{font-family:"Caveat",cursive;font-size:1.4rem;color:#6d6673;margin:0 0 18px}
+.next{border:0;border-radius:999px;background:#26222d;color:#fff;padding:13px 22px;font-weight:700;box-shadow:0 8px 18px rgba(38,34,45,.18);transition:.22s}.next:hover{transform:translateY(-2px)}.hidden{display:none!important}
+#counter{position:fixed;right:14px;bottom:12px;z-index:60;background:rgba(255,255,255,.8);backdrop-filter:blur(9px);border:1px solid rgba(39,34,45,.1);border-radius:999px;padding:7px 11px;font-size:.78rem}
+#lock,#intro,#thankyou,#leave{align-items:center;justify-content:center}.lock-card{width:min(560px,94%);padding:48px;text-align:center;transform:rotate(-1deg)}
+.password-row{display:flex;gap:10px;margin:24px auto 12px;max-width:380px}.password-row input{flex:1;padding:13px 15px;border:1px solid rgba(39,34,45,.15);border-radius:14px;background:#fff}.password-row button{border:0;border-radius:14px;background:#25212d;color:#fff;padding:0 18px;font-weight:700}.error{min-height:24px;color:#a23f58}.float{position:absolute;font-size:2.9rem;animation:float 4s ease-in-out infinite}.f1{left:8%;top:18%}.f2{right:9%;bottom:16%;animation-delay:-1s}.f3{right:14%;top:10%;animation-delay:-2s}@keyframes float{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-12px) rotate(5deg)}}
+.scene{width:min(980px,100%);min-height:650px;display:grid;place-items:center;position:relative}.intro-card,.thank-card{width:min(680px,92%);padding:56px}.badge{position:absolute;font-family:"Caveat",cursive;font-size:clamp(1.2rem,4vw,2.3rem);padding:8px 13px;border:2px solid currentColor;border-radius:12px;background:#fff9ef;box-shadow:0 10px 24px rgba(46,35,48,.13)}.max{left:5%;top:14%;transform:rotate(-8deg);color:#4b5cb0}.madrid{right:5%;top:18%;transform:rotate(7deg);color:#9b4e5f}.virat{left:9%;bottom:14%;transform:rotate(5deg);color:#c36c2d}
+.wrap{width:min(1080px,100%);margin:auto;text-align:center}.wrap header{max-width:720px;margin:0 auto 34px}
+.envelope-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;align-items:start}.envelope{min-height:170px;border-radius:16px;box-shadow:0 14px 30px rgba(54,42,58,.14);transition:.3s}.envelope:nth-child(odd){transform:rotate(-1.4deg)}.envelope:nth-child(even){transform:rotate(1.5deg)}.pink{background:#f3b9c8}.yellow{background:#f2d69b}.lilac{background:#cfc4ef}.blue{background:#bad9e9}.green{background:#c7dfc2}
+.envelope button{width:100%;min-height:170px;border:0;background:transparent;position:relative;padding:0;overflow:visible}.flap{position:absolute;inset:0 0 auto 0;height:70%;background:rgba(255,255,255,.2);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:.5s;z-index:3}.title{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);font-family:"Caveat",cursive;font-size:1.55rem;z-index:5;white-space:nowrap}.doodle{position:absolute;top:14px;right:14px;font-size:1.35rem;z-index:6}.letter{position:absolute;left:10%;right:10%;bottom:12px;height:75%;background:#fffaf0;border:1px solid rgba(39,34,45,.1);border-radius:10px;transform:translateY(35%);opacity:0;transition:.5s;z-index:2;padding:22px 15px;font-family:"Caveat",cursive;font-size:1.25rem;line-height:1.25}.envelope.open{min-height:300px;transform:translateY(-8px) rotate(0)}.envelope.open .flap{transform:rotateX(180deg)}.envelope.open .letter{height:190px;transform:translateY(-8px);opacity:1;z-index:4}.envelope.open .title{opacity:0}
+.hope-area{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:center}.hope-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.hope{aspect-ratio:1;border:2px dashed rgba(39,34,45,.18);border-radius:22px;background:rgba(255,255,255,.72);font-size:2rem;transition:.28s}.hope:hover{transform:translateY(-5px) rotate(-2deg)}.hope.revealed{background:#fff6e8;border-style:solid}.hope-note{padding:38px;min-height:190px;display:grid;place-items:center;transform:rotate(1.4deg)}.hope-note p{font-family:"Caveat",cursive;font-size:1.8rem;margin:0}.hope-final{font-family:"Playfair Display",serif;font-size:1.5rem;margin:28px auto 18px}
+.tabs{display:flex;justify-content:center;gap:10px;margin-bottom:18px;flex-wrap:wrap}.tab{border:1px solid rgba(39,34,45,.12);background:rgba(255,255,255,.7);border-radius:999px;padding:10px 16px;font-weight:700}.tab.active{background:#25212d;color:#fff}.game{display:none}.game.active{display:block}.game-card{width:min(820px,100%);margin:auto;padding:24px;border-radius:28px;background:#fff9ef;box-shadow:0 20px 50px rgba(47,35,50,.15);border:1px solid rgba(39,34,45,.08)}.game-head{display:flex;justify-content:space-between;font-weight:700;font-size:.85rem;letter-spacing:.08em}
+.track{height:170px;margin:20px 0;position:relative;border:16px solid #34303a;border-radius:90px;background:#8ca67f;overflow:hidden}.track:before{content:"";position:absolute;inset:32px;border:3px dashed rgba(255,255,255,.75);border-radius:60px}.car{position:absolute;left:6%;top:54%;transform:translateY(-50%) scaleX(-1);border:0;background:transparent;font-size:3rem;transition:1s cubic-bezier(.2,.8,.2,1);z-index:3}.podium{position:absolute;right:5%;top:50%;transform:translateY(-50%);font-size:3rem}.result{min-height:30px;font-family:"Caveat",cursive;font-size:1.5rem}
+.pitch{height:240px;margin:20px 0;position:relative;border-radius:20px;background:repeating-linear-gradient(90deg,#7aaa68 0 70px,#83b472 70px 140px);overflow:hidden}.pitch:after{content:"";position:absolute;inset:20px;border:3px solid rgba(255,255,255,.7);border-radius:8px}.goal{position:absolute;right:8%;top:50%;transform:translateY(-50%);font-size:5rem;z-index:3}.ball{position:absolute;left:12%;bottom:42px;border:0;background:transparent;font-size:3rem;z-index:4;transition:1s ease}.crowd{position:absolute;left:50%;top:18px;transform:translateX(-50%);font-family:"Caveat",cursive;font-size:1.4rem;color:white;text-shadow:0 2px 5px rgba(0,0,0,.2);z-index:5}
+.ground{height:240px;margin:20px 0;position:relative;border-radius:50%;background:#a7c684;overflow:hidden;border:12px solid #7da562}.six{position:absolute;right:7%;top:20%;font-family:"Caveat",cursive;font-size:2.1rem;font-weight:700;color:#fff}.bat{position:absolute;left:14%;bottom:38px;font-size:4rem;transform:rotate(-14deg)}.cricket-ball{position:absolute;left:32%;bottom:62px;width:24px;height:24px;border-radius:50%;background:#a72f3b;border:0;box-shadow:inset -4px -3px 0 rgba(0,0,0,.15);transition:1s ease;z-index:3}.stumps{position:absolute;right:16%;bottom:44px;font-weight:800;letter-spacing:5px;font-size:2rem;transform-origin:bottom;transition:.6s}.wins{margin:26px auto 16px;padding:20px 22px;width:min(700px,100%);border-radius:20px;background:#fff5cf;border:2px dashed #d19f47}.wins b{display:block;font-family:"Playfair Display",serif;font-size:1.35rem}.wins span{font-family:"Caveat",cursive;font-size:1.25rem}
+.notes{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:30px}.note{padding:32px;text-align:left;min-height:150px;box-shadow:0 14px 30px rgba(48,35,51,.14)}.note span{font-family:"Caveat",cursive;font-size:2rem}.n1{background:#ffd5df;transform:rotate(-2deg)}.n2{background:#dcd3f7;transform:rotate(1.5deg)}.n3{background:#f5dfae;transform:rotate(1deg)}.n4{background:#cde6ca;transform:rotate(-1.5deg)}
+.t1{left:7%;top:13%}.t2{right:7%;top:18%;animation-delay:-1s}.t3{left:12%;bottom:14%;animation-delay:-2s}.t4{right:14%;bottom:12%;animation-delay:-.7s}.t5{right:36%;top:5%;animation-delay:-1.4s}
+.leave-card{width:min(760px,94%);padding:54px}.leave-card>p:not(.label){font-family:"Playfair Display",serif;font-size:clamp(1.05rem,3vw,1.4rem);line-height:1.7}
+.final{background:radial-gradient(circle at 50% 5%,rgba(100,78,137,.28),transparent 30%),linear-gradient(#17131f,#0d0b12);color:#fff;align-items:center;justify-content:center;overflow:hidden}.final #stars{position:absolute;inset:0}.star{position:absolute;border-radius:50%;background:white;opacity:.75;animation:twinkle 2.5s ease-in-out infinite}@keyframes twinkle{0%,100%{opacity:.25;transform:scale(.7)}50%{opacity:1;transform:scale(1.5)}}.final-lines,.phase-two,.goodbye{width:min(760px,92%);text-align:center;z-index:2}.final-lines p,.phase-two p,.goodbye{opacity:0}.final-lines p.show,.phase-two.show p,.goodbye.show{animation:fadeUp 1s ease forwards}.final-lines p{margin:0 0 12px}.big{font-family:"Playfair Display",serif;font-size:1.8rem}.phase-two,.goodbye{position:absolute}.phase-two p{font-family:"Playfair Display",serif;font-size:1.6rem}.goodbye h2{font-size:clamp(3rem,10vw,6rem)}.goodbye p{color:rgba(255,255,255,.72)}.signature{position:absolute;right:26px;bottom:24px;font-family:"Caveat",cursive;font-size:1.45rem;opacity:0;z-index:3}.signature.show{animation:fadeUp 1s ease forwards}@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}.shooting-star{position:absolute;left:-160px;top:22%;width:120px;height:2px;background:linear-gradient(90deg,transparent,#fff);transform:rotate(-28deg);opacity:0}.shooting-star.go{animation:shoot 1.8s ease-out forwards}@keyframes shoot{0%{opacity:1}100%{left:110%;top:55%;opacity:0}}
+@media(max-width:900px){.envelope-grid{grid-template-columns:repeat(2,1fr)}.hope-area{grid-template-columns:1fr}.hope-grid{grid-template-columns:repeat(5,1fr)}}@media(max-width:620px){.page{padding:26px 14px 68px}.lock-card,.intro-card,.thank-card,.leave-card{padding:36px 24px}.float{font-size:2.1rem}.badge{font-size:1.15rem}.envelope-grid{grid-template-columns:1fr}.hope-grid{grid-template-columns:repeat(2,1fr)}.hope-grid .hope:last-child{grid-column:1/-1;max-width:150px;width:100%;justify-self:center}.notes{grid-template-columns:1fr}.track{height:135px;border-width:12px}.pitch,.ground{height:200px}}
+
+
+/* extra playful details */
+.scribble-arrow{
+  position:absolute;
+  font-family:"Caveat",cursive;
+  font-size:3rem;
+  color:rgba(39,34,45,.55);
+  animation:wobble 2.8s ease-in-out infinite;
+}
+.arrow-one{left:18%;top:22%;transform:rotate(-10deg)}
+.arrow-two{right:18%;bottom:20%;transform:rotate(14deg);animation-delay:-1.2s}
+
+.orbit-sticker{
+  position:absolute;
+  font-size:2.2rem;
+  animation:orbit 5s ease-in-out infinite;
+  filter:drop-shadow(0 8px 10px rgba(40,30,45,.15));
+}
+.os1{left:20%;bottom:8%}
+.os2{right:21%;top:7%;animation-delay:-2.3s}
+
+@keyframes orbit{
+  0%,100%{transform:translate(0,0) rotate(-6deg)}
+  25%{transform:translate(8px,-10px) rotate(5deg)}
+  50%{transform:translate(-5px,-16px) rotate(-4deg)}
+  75%{transform:translate(-10px,-4px) rotate(6deg)}
+}
+@keyframes wobble{
+  0%,100%{transform:rotate(-8deg) scale(1)}
+  50%{transform:rotate(5deg) scale(1.08)}
+}
+
+.sparkle-trail{
+  display:flex;
+  justify-content:center;
+  gap:22px;
+  margin:-8px 0 20px;
+  font-size:1.5rem;
+}
+.sparkle-trail span{
+  display:inline-block;
+  animation:sparklePop 1.8s ease-in-out infinite;
+}
+.sparkle-trail span:nth-child(2){animation-delay:-.45s}
+.sparkle-trail span:nth-child(3){animation-delay:-.9s}
+.sparkle-trail span:nth-child(4){animation-delay:-1.35s}
+@keyframes sparklePop{
+  0%,100%{transform:translateY(0) scale(.8) rotate(0);opacity:.45}
+  50%{transform:translateY(-8px) scale(1.25) rotate(18deg);opacity:1}
+}
+
+.envelope:hover{
+  transform:translateY(-8px) rotate(0deg) !important;
+}
+.envelope:hover .doodle{
+  animation:doodleBounce .65s ease;
+}
+@keyframes doodleBounce{
+  0%,100%{transform:translateY(0) rotate(0)}
+  35%{transform:translateY(-8px) rotate(-12deg)}
+  70%{transform:translateY(2px) rotate(10deg)}
+}
+
+.hope.revealed{
+  animation:tilePop .5s cubic-bezier(.2,.9,.2,1.2);
+}
+@keyframes tilePop{
+  0%{transform:scale(.7) rotate(-8deg)}
+  70%{transform:scale(1.12) rotate(4deg)}
+  100%{transform:scale(1) rotate(0)}
+}
+
+.badge{
+  animation:badgeBob 3s ease-in-out infinite;
+}
+.badge:nth-of-type(2){animation-delay:-1s}
+.badge:nth-of-type(3){animation-delay:-2s}
+@keyframes badgeBob{
+  0%,100%{translate:0 0}
+  50%{translate:0 -8px}
+}
+
+.game-card{
+  position:relative;
+  overflow:hidden;
+}
+.game-card::after{
+  content:"";
+  position:absolute;
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  background:rgba(255,255,255,.22);
+  right:-25px;
+  top:-25px;
+  animation:bubblePulse 3s ease-in-out infinite;
+}
+@keyframes bubblePulse{
+  0%,100%{transform:scale(.9);opacity:.35}
+  50%{transform:scale(1.25);opacity:.75}
+}
+
+.wins em{
+  display:block;
+  margin-top:6px;
+  font-family:"Caveat",cursive;
+  font-size:1.1rem;
+  color:#7b6745;
+}
+
+.note:hover{
+  animation:noteWiggle .5s ease;
+}
+@keyframes noteWiggle{
+  0%,100%{transform:rotate(0)}
+  25%{transform:rotate(-2deg)}
+  75%{transform:rotate(2deg)}
+}
+
+.next{
+  position:relative;
+  overflow:hidden;
+}
+.next::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(110deg,transparent 25%,rgba(255,255,255,.25) 45%,transparent 65%);
+  transform:translateX(-120%);
+}
+.next:hover::after{
+  animation:buttonShine .7s ease;
+}
+@keyframes buttonShine{
+  to{transform:translateX(120%)}
+}

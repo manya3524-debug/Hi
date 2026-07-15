@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Dushman</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="noise"></div>
+<main>
+  <section class="page active" id="lock">
+    <span class="float f1">🐧</span><span class="float f2">😈</span><span class="float f3">🏎️</span>
+    <div class="paper lock-card">
+      <span class="tape"></span>
+      <p class="label">a tiny website for</p>
+      <h1>dushman.</h1>
+      <p class="hand">yes, this required an unreasonable amount of effort.</p>
+      <div class="password-row">
+        <input id="passwordInput" type="password" placeholder="password">
+        <button id="unlockBtn">open</button>
+      </div>
+      <p id="passwordError" class="error"></p>
+      <small>hint: the first name you ever gave me.</small>
+    </div>
+  </section>
+
+  <section class="page" id="intro">
+    <div class="scene">
+      <div class="scribble-arrow arrow-one">↘</div>
+      <div class="scribble-arrow arrow-two">↙</div>
+      <b class="badge max">MAX</b><b class="badge madrid">MADRID</b><b class="badge virat">VIRAT</b>
+      <span class="orbit-sticker os1">🐧</span><span class="orbit-sticker os2">😈</span>
+      <div class="paper intro-card">
+        <span class="tape tape-right"></span>
+        <p class="label">okay, so...</p>
+        <h2>open these slowly.</h2>
+        <p>Some are stupid.<br>Some are sweet.<br>One is a goodbye.</p>
+        <button class="next" data-next="envelopes">start →</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="page" id="envelopes">
+    <div class="wrap">
+      <header><p class="label">page one-ish</p><h2>open all five.</h2><p class="hand">no skipping. I’ll know.</p></header>
+      <div class="sparkle-trail" aria-hidden="true"><span>✦</span><span>✧</span><span>✦</span><span>✧</span></div>
+      <div class="envelope-grid">
+        <article class="envelope pink" data-message="For every call that was supposed to be short and somehow became half the day.">
+          <button><span class="doodle">📞</span><span class="title">for the calls</span><span class="flap"></span><span class="letter"></span></button>
+        </article>
+        <article class="envelope yellow" data-message="For making me laugh even when I was fully prepared to stay annoyed.">
+          <button><span class="doodle">😂</span><span class="title">for the laughs</span><span class="flap"></span><span class="letter"></span></button>
+        </article>
+        <article class="envelope lilac" data-message="For staying, reassuring me, and handling things you never really had to handle.">
+          <button><span class="doodle">🐧</span><span class="title">for staying</span><span class="flap"></span><span class="letter"></span></button>
+        </article>
+        <article class="envelope blue" data-message="For the fights, reels, dark humour, nonsense and complete chaos.">
+          <button><span class="doodle">😈</span><span class="title">for the chaos</span><span class="flap"></span><span class="letter"></span></button>
+        </article>
+        <article class="envelope green" data-message="For all the tiny things that became important without asking permission.">
+          <button><span class="doodle">✨</span><span class="title">for the little things</span><span class="flap"></span><span class="letter"></span></button>
+        </article>
+      </div>
+      <button class="next hidden" id="envelopesNext" data-next="hope">continue →</button>
+    </div>
+  </section>
+
+  <section class="page" id="hope">
+    <div class="wrap">
+      <header><p class="label">for the slightly terrible days</p><h2>grow a little hope.</h2><p class="hand">tap everything. obviously.</p></header>
+      <div class="hope-area">
+        <div class="hope-grid">
+          <button class="hope" data-icon="🏋️" data-text="You do not have to figure everything out today.">?</button>
+          <button class="hope" data-icon="🥤" data-text="A bad few days do not mean life is going badly.">?</button>
+          <button class="hope" data-icon="🏎️" data-text="The things you love are still waiting for you.">?</button>
+          <button class="hope" data-icon="⚽" data-text="You are allowed to be quiet without disappearing.">?</button>
+          <button class="hope" data-icon="🏏" data-text="Something good can still happen very unexpectedly.">?</button>
+        </div>
+        <div class="paper hope-note" id="hopeNote"><span class="tape small-tape"></span><p>tap one of the doodles.</p></div>
+      </div>
+      <p class="hope-final hidden" id="hopeFinal">I hope life feels a little lighter for you soon.</p>
+      <button class="next hidden" id="hopeNext" data-next="games">continue →</button>
+    </div>
+  </section>
+
+  <section class="page" id="games">
+    <div class="wrap">
+      <header><p class="label">very serious sporting business</p><h2>win three things.</h2><p class="hand">because apparently your favourites need help.</p></header>
+      <div class="tabs">
+        <button class="tab active" data-game="f1Game">F1</button>
+        <button class="tab" data-game="footballGame">football</button>
+        <button class="tab" data-game="cricketGame">cricket</button>
+      </div>
+
+      <div class="game active" id="f1Game">
+        <div class="game-card">
+          <div class="game-head"><b>MAX MODE</b><span id="lapCount">0 / 3 laps</span></div>
+          <div class="track"><button id="f1Car" class="car">🏎️</button><span class="podium">🏆</span></div>
+          <p class="hand">tap the car three times.</p><p id="f1Result" class="result"></p>
+        </div>
+      </div>
+
+      <div class="game" id="footballGame">
+        <div class="game-card">
+          <div class="game-head"><b>MADRID MODE</b><span id="goalCount">0 / 2 taps</span></div>
+          <div class="pitch"><span class="goal">🥅</span><button id="footballBall" class="ball">⚽</button><span id="crowdText" class="crowd">tap the ball</span></div>
+          <p id="footballResult" class="result"></p>
+        </div>
+      </div>
+
+      <div class="game" id="cricketGame">
+        <div class="game-card">
+          <div class="game-head"><b>VIRAT MODE</b><span id="shotCount">0 / 2 taps</span></div>
+          <div class="ground"><span class="six">SIX</span><span class="bat">🏏</span><button id="cricketBall" class="cricket-ball"></button><span class="stumps">|||</span></div>
+          <p id="cricketResult" class="result"></p>
+        </div>
+      </div>
+
+      <div class="wins hidden" id="allWins"><b>Hopefully now your favourites will finally win.</b><span>I’m taking the panauti allegations with me.</span><em>yes, this is me being generous.</em></div>
+      <button class="next hidden" id="gamesNext" data-next="special">continue →</button>
+    </div>
+  </section>
+
+  <section class="page" id="special">
+    <div class="wrap">
+      <header><p class="label">annoying but true</p><h2>a few things about you.</h2></header>
+      <div class="notes">
+        <div class="note n1"><span>01</span><h3>you care more than you show.</h3></div>
+        <div class="note n2"><span>02</span><h3>you make people laugh.</h3></div>
+        <div class="note n3"><span>03</span><h3>you keep going.</h3></div>
+        <div class="note n4"><span>04</span><h3>you leave an impact.</h3></div>
+      </div>
+      <button class="next" data-next="thankyou">continue →</button>
+    </div>
+  </section>
+
+  <section class="page" id="thankyou">
+    <div class="scene">
+      <span class="float t1">🏎️</span><span class="float t2">⚽</span><span class="float t3">🏏</span><span class="float t4">🐧</span><span class="float t5">😈</span>
+      <div class="paper thank-card">
+        <span class="tape"></span><p class="label">before the serious part</p><h2>thank you.</h2>
+        <p>For every conversation, every laugh, every random debate, every stupid joke, and every moment you stayed.</p>
+        <p>Some of it was messy. Some of it was confusing. But a lot of it mattered to me.</p>
+        <button class="next" data-next="leave">one last thing →</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="page" id="leave">
+    <div class="paper leave-card">
+      <span class="tape"></span><p class="label">one last thing</p>
+      <p>I don't want to keep holding on to something that neither of us believes has a future.</p>
+      <p>You told me you'd stay until I moved on, but I think moving on is something I have to do without relying on you.</p>
+      <p>I don't want to force my place in your life anymore.</p>
+      <p>Thank you for everything.</p><p>I wish you the best.</p>
+      <button class="next" data-next="final">continue →</button>
+    </div>
+  </section>
+
+  <section class="page final" id="final">
+    <div id="stars"></div><div class="shooting-star"></div>
+    <div class="final-lines">
+      <p>I genuinely hope life treats you well.</p>
+      <p>I hope your mornings become easier.</p>
+      <p>I hope your gym feels like home again.</p>
+      <p>I hope your favourites finally start winning.</p>
+      <p class="big">And most of all...</p><p class="big">I hope you're happy.</p>
+    </div>
+    <div class="phase-two"><p>Take care of yourself, okay?</p><p>You'll do just fine.</p></div>
+    <div class="goodbye"><h2>Goodbye, Vidit.</h2><p>Thank you for being one of the most meaningful chapters of my life.</p></div>
+    <div class="signature">— Manya 🌼</div>
+  </section>
+</main>
+
+<div id="counter">1 / 9</div>
+<script src="script.js"></script>
+</body>
+</html>
